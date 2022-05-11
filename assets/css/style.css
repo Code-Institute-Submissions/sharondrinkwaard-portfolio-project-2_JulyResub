@@ -17,7 +17,7 @@ h1 {
 }
 
 /* Background image, color and positioning */
-#background-container {
+.background-container {
     background: url("../images/netherlands-tulip-field.jpg") no-repeat center center fixed;
     background-size: cover;
     position: relative;
@@ -28,7 +28,7 @@ h1 {
 }
 
 /* main div positioning */
-#quiz-container {
+.quiz-container {
     margin: auto;
     margin-top: 15%;
     width: 40%;
