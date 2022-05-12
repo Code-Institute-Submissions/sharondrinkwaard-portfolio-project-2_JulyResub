@@ -4,16 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/quiz.css">
     <title>Quiz Page</title>
 </head>
 <body>
 
     <section class="background-container">
         <div class="quiz-container">
+            <div id="question-container" class="hide"></div>
+            <div id="question" class="header-text">Question</div>
+            <div id="answer-btns" class="btn-grid">
+                <button id="choice" class="btn">Answer 1</button>
+                <button id="choice" class="btn">Answer 2</button>
+                <button id="choice" class="btn">Answer 3</button>
+                <button id="choice" class="btn">Answer 4</button>
+            </div>
 
+            <div class="controls btn-grid">
+                <button id="start-btn" class="start-btn btn">Start Quiz</button>
+                <button id="next-btn" class="next-btn btn">Next</button>
+            </div>
+<!--
+            <h1 id="question" class="header-text">Question</h1>
+            <div class="choice-container">
+                <span class="">A</span>
+                <span class="choice-answer" data-number="1">Choice 1</span>
+            </div>
+            <div class="choice-container">
+                <span class="">B</span>
+                <span class="choice-answer" data-number="2">Choice 3</span>
+            </div>
+            <div class="choice-container">
+                <span class="">C</span>
+                <span class="choice-answer" data-number="3">Choice 3</span>
+            </div>
+
+            <div class="index-btns">
+                <a id="submit-btn" class="btn">Submit</a>
+                <a href="index.html" class="btn">Stop Quiz</a>
+            </div>
         </div>
-
+        <div class="score-area">
+        <p class="scores">Correct answers<span id="score">0</span></p>
+        <p class="scores"></p>Incorrect answers<span id="incorrect">0</span></p>
+        </div>-->
     </section>
+    
     
     <script src="/assets/js/quiz.js"></script>
 </body>
