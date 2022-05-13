@@ -23,6 +23,9 @@ let acceptingAnswers = true;
 
 // Functions
 
+/**
+ * Starts and runs the game
+ */
 function startQuiz() {
     startButton.classList.add('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
@@ -32,8 +35,6 @@ function startQuiz() {
 }
 
 function nextQuestion() {
-    //showQuestion(questions[0]);
-    //for (let i = 0; i < questions.length; i++){}
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
@@ -74,7 +75,9 @@ function selectAnswer(e) {
     }
     
 }
-
+/** 
+ * Sets the background color of the chosen answer to red or green
+*/
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
@@ -83,12 +86,28 @@ function setStatusClass(element, correct) {
         element.classList.add('wrong')
     }
 }
-
+/**
+ * Clears the background color of correct and incorrect answers
+ */
 function clearStatusClass (element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
 
+
+/**
+ * Gets the current score from the DOM and increments the correct of incorrect score
+ */
+function incrementCorrectScore() {
+    let newScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++newScore;
+}
+function incremenWrongScore() {
+    let newScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++newScore;
+}
+
+// Quiz questions array
 const questions = [
     {
         question: 'In what continent is the Netherlands located?',
@@ -109,30 +128,12 @@ const questions = [
         ]
     },
     {
-        question: 'What language do they speak in the Netherlands?',
+        question: 'What colors does the Dutch flag have?',
         answers: [
-            { text: 'Flemish', correct: false },
-            { text: 'Dutch', correct: true },
-            { text: 'French', correct: false },
-            { text: 'German', correct: false }
-        ]
-    },
-    {
-        question: 'What language do they speak in the Netherlands?',
-        answers: [
-            { text: 'Flemish', correct: false },
-            { text: 'Dutch', correct: true },
-            { text: 'French', correct: false },
-            { text: 'German', correct: false }
-        ]
-    },
-    {
-        question: 'What does the Dutch flag look like?',
-        answers: [
-            { text: '' correct: false },
-            { text: 'Dutch', correct: false },
-            { text: 'French', correct: false },
-            { text: 'German', correct: true }
+            { text: 'Black yellow and red', correct: false },
+            { text: 'Red white and blue', correct: true },
+            { text: 'Blue and white', correct: false },
+            { text: 'Red and yellow', correct: false }
         ]
     },
     {
@@ -145,7 +146,7 @@ const questions = [
         ]
     },
     {
-        question: 'There do the Dutch use windmills for?',
+        question: 'Where do the Dutch use windmills for?',
         answers: [
             { text: 'To generate electricity', correct: true },
             { text: 'To pump water', correct: true },
@@ -181,3 +182,5 @@ const questions = [
         ]
     }
 ]
+// Img array for 1 specific question -- NOT WORKING YET
+imgAray = ['france_flag.png', 'netherlands_flag.png', 'spain_flag.png', 'sweden_flag.png'];
