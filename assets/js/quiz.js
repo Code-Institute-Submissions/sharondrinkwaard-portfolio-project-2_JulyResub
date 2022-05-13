@@ -17,6 +17,8 @@ nextButton.addEventListener('click', () => {
 let score = 0;
 let questionCounter = 0;
 let acceptingAnswers = true;
+let correctAnwsers = true;
+let incorrectAnswers = 0;
 
 
 
@@ -73,8 +75,9 @@ function selectAnswer(e) {
         startButton.innerText = 'Restart',
         startButton.classList.remove('hide')
     }
-    
+    getAnswer()
 }
+
 /** 
  * Sets the background color of the chosen answer to red or green
 */
@@ -86,6 +89,7 @@ function setStatusClass(element, correct) {
         element.classList.add('wrong')
     }
 }
+
 /**
  * Clears the background color of correct and incorrect answers
  */
@@ -93,16 +97,29 @@ function clearStatusClass (element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
-
+/** 
+ * Gets the correct answer plus call the right function
+ */
+function getAnswer(correctAnwsers) {
+    if (correctAnwsers) {
+        incrementCorrectScore()
+    } else {
+        incrementWrongScore()
+    }
+}
 
 /**
- * Gets the current score from the DOM and increments the correct of incorrect score
+ * Gets the current score from the DOM and increments the correct score
  */
 function incrementCorrectScore() {
     let newScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++newScore;
 }
-function incremenWrongScore() {
+
+/**
+ * Gets the current score fom the DOM and increments the incorrect score
+ */
+function incrementWrongScore() {
     let newScore = parseInt(document.getElementById("incorrect").innerText);
     document.getElementById("incorrect").innerText = ++newScore;
 }
@@ -112,7 +129,7 @@ const questions = [
     {
         question: 'In what continent is the Netherlands located?',
         answers: [
-            { text: 'Europe', correct: true },
+            { text: 'Europe', correct: true, correctAnwsers: true },
             { text: 'Asia', correct: false },
             { text: 'South America', correct: false },
             { text: 'Africa', correct: false },
@@ -122,7 +139,7 @@ const questions = [
         question: 'What language do they speak in the Netherlands?',
         answers: [
             { text: 'Flemish', correct: false },
-            { text: 'Dutch', correct: true },
+            { text: 'Dutch', correct: true, correctAnwsers: true },
             { text: 'French', correct: false },
             { text: 'German', correct: false }
         ]
@@ -131,7 +148,7 @@ const questions = [
         question: 'What colors does the Dutch flag have?',
         answers: [
             { text: 'Black yellow and red', correct: false },
-            { text: 'Red white and blue', correct: true },
+            { text: 'Red white and blue', correct: true, correctAnwsers: true },
             { text: 'Blue and white', correct: false },
             { text: 'Red and yellow', correct: false }
         ]
@@ -139,7 +156,7 @@ const questions = [
     {
         question: 'What was the currency of the Netherlands before the euro was adopted?',
         answers: [
-            { text: 'Guilder', correct: true },
+            { text: 'Guilder', correct: true, correctAnwsers: true},
             { text: 'Pound', correct: false },
             { text: 'Dollar', correct: false },
             { text: 'Crown', correct: false }
@@ -148,10 +165,10 @@ const questions = [
     {
         question: 'Where do the Dutch use windmills for?',
         answers: [
-            { text: 'To generate electricity', correct: true },
-            { text: 'To pump water', correct: true },
-            { text: 'Grind grain into flour', correct: true },
-            { text: 'All answers are correct', correct: true }
+            { text: 'To generate electricity', correct: false },
+            { text: 'To pump water', correct: false },
+            { text: 'Grind grain into flour', correct: false },
+            { text: 'All answers are correct', correct: true, correctAnwsers: true }
         ]
     },
     {
@@ -160,14 +177,14 @@ const questions = [
             { text: 'Smaller countries', correct: false },
             { text: 'Higher countries', correct: false },
             { text: 'Flat countries', correct: false },
-            { text: 'Lower countries', correct: true }
+            { text: 'Lower countries', correct: true, correctAnwsers: true }
         ]
     },
     {
         question: 'What is the average height of Dutch men?',
         answers: [
             { text: '165cm', correct: false },
-            { text: '183cm', correct: true },
+            { text: '183cm', correct: true, correctAnwsers: true },
             { text: '175cm', correct: false },
             { text: '170cm', correct: false }
         ]
@@ -175,7 +192,7 @@ const questions = [
     {
         question: 'What alcoholic drink did the Dutch invent?',
         answers: [
-            { text: 'Gin', correct: true },
+            { text: 'Gin', correct: true, correctAnwsers: true },
             { text: 'Rum', correct: false },
             { text: 'Vodka', correct: false },
             { text: 'Amaretto', correct: false }
@@ -183,4 +200,4 @@ const questions = [
     }
 ]
 // Img array for 1 specific question -- NOT WORKING YET
-imgAray = ['france_flag.png', 'netherlands_flag.png', 'spain_flag.png', 'sweden_flag.png'];
+//imgAray = ['france_flag.png', 'netherlands_flag.png', 'spain_flag.png', 'sweden_flag.png'];
