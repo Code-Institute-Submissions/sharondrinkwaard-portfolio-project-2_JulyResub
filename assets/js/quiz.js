@@ -8,10 +8,11 @@ const answerChoices = document.getElementById('answer-btns');
 let shuffledQuestions, currentQuestionIndex;
 
 
-
-
 startButton.addEventListener('click', startQuiz);
-nextButton.addEventListener('click', nextQuestion);
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    nextQuestion()
+});
 
 let score = 0;
 let questionCounter = 0;
@@ -65,6 +66,13 @@ function selectAnswer(e) {
     Array.from(answerChoices.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if (shuffledQuestions.length > currentQuestionIndex +1) {
+        nextButton.classList.remove('hide')
+    } else {
+        startButton.innerText = 'Restart',
+        startButton.classList.remove('hide')
+    }
+    
 }
 
 function setStatusClass(element, correct) {
@@ -98,6 +106,78 @@ const questions = [
             { text: 'Dutch', correct: true },
             { text: 'French', correct: false },
             { text: 'German', correct: false }
+        ]
+    },
+    {
+        question: 'What language do they speak in the Netherlands?',
+        answers: [
+            { text: 'Flemish', correct: false },
+            { text: 'Dutch', correct: true },
+            { text: 'French', correct: false },
+            { text: 'German', correct: false }
+        ]
+    },
+    {
+        question: 'What language do they speak in the Netherlands?',
+        answers: [
+            { text: 'Flemish', correct: false },
+            { text: 'Dutch', correct: true },
+            { text: 'French', correct: false },
+            { text: 'German', correct: false }
+        ]
+    },
+    {
+        question: 'What does the Dutch flag look like?',
+        answers: [
+            { text: '' correct: false },
+            { text: 'Dutch', correct: false },
+            { text: 'French', correct: false },
+            { text: 'German', correct: true }
+        ]
+    },
+    {
+        question: 'What was the currency of the Netherlands before the euro was adopted?',
+        answers: [
+            { text: 'Guilder', correct: true },
+            { text: 'Pound', correct: false },
+            { text: 'Dollar', correct: false },
+            { text: 'Crown', correct: false }
+        ]
+    },
+    {
+        question: 'There do the Dutch use windmills for?',
+        answers: [
+            { text: 'To generate electricity', correct: true },
+            { text: 'To pump water', correct: true },
+            { text: 'Grind grain into flour', correct: true },
+            { text: 'All answers are correct', correct: true }
+        ]
+    },
+    {
+        question: 'What is the literal translation of the word Netherlands?',
+        answers: [
+            { text: 'Smaller countries', correct: false },
+            { text: 'Higher countries', correct: false },
+            { text: 'Flat countries', correct: false },
+            { text: 'Lower countries', correct: true }
+        ]
+    },
+    {
+        question: 'What is the average height of Dutch men?',
+        answers: [
+            { text: '165cm', correct: false },
+            { text: '183cm', correct: true },
+            { text: '175cm', correct: false },
+            { text: '170cm', correct: false }
+        ]
+    },
+    {
+        question: 'What alcoholic drink did the Dutch invent?',
+        answers: [
+            { text: 'Gin', correct: true },
+            { text: 'Rum', correct: false },
+            { text: 'Vodka', correct: false },
+            { text: 'Amaretto', correct: false }
         ]
     }
 ]
