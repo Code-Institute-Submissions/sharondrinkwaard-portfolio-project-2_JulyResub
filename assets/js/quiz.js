@@ -1,5 +1,7 @@
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
+const scoresButton = document.getElementById('scores-btn');
+const answerButtons = document.getElementById('answer-btns');
 const questionContainerElement = document.getElementById('question-container');
 const introText = document.getElementById('header-text');
 const questionAsked = document.getElementById('question');
@@ -18,7 +20,8 @@ let score = 0;
 let questionCounter = 0;
 let acceptingAnswers = true;
 let correctAnwsers = true;
-let incorrectAnswers = 0;
+let incorrectAnswers = true;
+let points;
 
 
 
@@ -29,16 +32,26 @@ let incorrectAnswers = 0;
  * Starts and runs the game
  */
 function startQuiz() {
+    correctAnwsers = 0
     startButton.classList.add('hide');
+    answerButtons.classList.remove('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
-    questionContainerElement.classList.remove('hide');
+    questionAsked.classList.remove('hide');
     nextQuestion();
 }
 
 function nextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
+
+    if (shuffledQuestions.length > currentQuestionIndex +1) {
+        nextButton.classList.remove('hide')
+    } else {
+        scoresButton.classList.remove('hide')
+        //startButton.innerText = 'Restart',
+        //startButton.classList.remove('hide')
+    }
 }
 
 function showQuestion(question) {
@@ -63,19 +76,17 @@ function resetState() {
 }
 
 function selectAnswer(e) {
+    if (e.target.dataset.correct) {
+        correctAnwsers++
+        console.log(correctAnwsers)
+    }
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     setStatusClass(document.body, correct)
     Array.from(answerChoices.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-    if (shuffledQuestions.length > currentQuestionIndex +1) {
-        nextButton.classList.remove('hide')
-    } else {
-        startButton.innerText = 'Restart',
-        startButton.classList.remove('hide')
-    }
-    getAnswer()
+    
 }
 
 /** 
@@ -90,6 +101,9 @@ function setStatusClass(element, correct) {
     }
 }
 
+
+
+
 /**
  * Clears the background color of correct and incorrect answers
  */
@@ -97,16 +111,8 @@ function clearStatusClass (element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
-/** 
- * Gets the correct answer plus call the right function
- */
-function getAnswer(correctAnwsers) {
-    if (correctAnwsers) {
-        incrementCorrectScore()
-    } else {
-        incrementWrongScore()
-    }
-}
+
+
 
 /**
  * Gets the current score from the DOM and increments the correct score
@@ -129,7 +135,7 @@ const questions = [
     {
         question: 'In what continent is the Netherlands located?',
         answers: [
-            { text: 'Europe', correct: true, correctAnwsers: true },
+            { text: 'Europe', correct: true, correctAnwsers: true, points: 1 },
             { text: 'Asia', correct: false },
             { text: 'South America', correct: false },
             { text: 'Africa', correct: false },
@@ -139,7 +145,7 @@ const questions = [
         question: 'What language do they speak in the Netherlands?',
         answers: [
             { text: 'Flemish', correct: false },
-            { text: 'Dutch', correct: true, correctAnwsers: true },
+            { text: 'Dutch', correct: true, correctAnwsers: true, points: 1 },
             { text: 'French', correct: false },
             { text: 'German', correct: false }
         ]
@@ -148,7 +154,7 @@ const questions = [
         question: 'What colors does the Dutch flag have?',
         answers: [
             { text: 'Black yellow and red', correct: false },
-            { text: 'Red white and blue', correct: true, correctAnwsers: true },
+            { text: 'Red white and blue', correct: true, correctAnwsers: true, points: 1 },
             { text: 'Blue and white', correct: false },
             { text: 'Red and yellow', correct: false }
         ]
@@ -156,7 +162,7 @@ const questions = [
     {
         question: 'What was the currency of the Netherlands before the euro was adopted?',
         answers: [
-            { text: 'Guilder', correct: true, correctAnwsers: true},
+            { text: 'Guilder', correct: true, correctAnwsers: true, points: 1},
             { text: 'Pound', correct: false },
             { text: 'Dollar', correct: false },
             { text: 'Crown', correct: false }
@@ -168,7 +174,7 @@ const questions = [
             { text: 'To generate electricity', correct: false },
             { text: 'To pump water', correct: false },
             { text: 'Grind grain into flour', correct: false },
-            { text: 'All answers are correct', correct: true, correctAnwsers: true }
+            { text: 'All answers are correct', correct: true, correctAnwsers: true, points: 1 }
         ]
     },
     {
@@ -177,14 +183,14 @@ const questions = [
             { text: 'Smaller countries', correct: false },
             { text: 'Higher countries', correct: false },
             { text: 'Flat countries', correct: false },
-            { text: 'Lower countries', correct: true, correctAnwsers: true }
+            { text: 'Lower countries', correct: true, correctAnwsers: true, points: 1 }
         ]
     },
     {
         question: 'What is the average height of Dutch men?',
         answers: [
             { text: '165cm', correct: false },
-            { text: '183cm', correct: true, correctAnwsers: true },
+            { text: '183cm', correct: true, correctAnwsers: true, points: 1 },
             { text: '175cm', correct: false },
             { text: '170cm', correct: false }
         ]
@@ -192,7 +198,7 @@ const questions = [
     {
         question: 'What alcoholic drink did the Dutch invent?',
         answers: [
-            { text: 'Gin', correct: true, correctAnwsers: true },
+            { text: 'Gin', correct: true, correctAnwsers: true, points: 1 },
             { text: 'Rum', correct: false },
             { text: 'Vodka', correct: false },
             { text: 'Amaretto', correct: false }

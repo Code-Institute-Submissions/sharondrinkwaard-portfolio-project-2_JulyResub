@@ -84,6 +84,10 @@
     background: red;
 }
 
+.correct-answer {
+    font-weight: bold;
+}
+
 .controls {
     display: grid;    
 }

@@ -14,8 +14,8 @@
     <section class="background-container">
         <div class="quiz-container">
             <div id="question-container" class="hide"></div>
-            <div id="question" class="header-text">Question</div>
-            <div id="answer-btns" class="btn-grid">
+            <div id="question" class="header-text hide">Question</div>
+            <div id="answer-btns" class="btn-grid hide">
                 <button id="choice1" class="btn">Answer 1</button>
                 <button id="choice2" class="btn">Answer 2</button>
                 <button id="choice3" class="btn">Answer 3</button>
@@ -24,7 +24,8 @@
 
             <div class="controls btn-grid">
                 <button id="start-btn" class="start-btn btn">Start Quiz</button>
-                <button id="next-btn" class="next-btn btn">Next</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+                <button id="scores-btn" class="btn hide" onclick="window.location.href='highscores.html'">See scores</button>
             </div>
 
         <div class="score-area">
