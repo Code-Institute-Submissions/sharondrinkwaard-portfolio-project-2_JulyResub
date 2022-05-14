@@ -1,32 +1,33 @@
-const startButton = document.getElementById('start-btn');
-const nextButton = document.getElementById('next-btn');
-const scoresButton = document.getElementById('scores-btn');
-const answerButtons = document.getElementById('answer-btns');
-const questionContainerElement = document.getElementById('question-container');
-const introText = document.getElementById('header-text');
-const questionAsked = document.getElementById('question');
-const answerChoices = document.getElementById('answer-btns');
-
-let shuffledQuestions, currentQuestionIndex;
-
-
-startButton.addEventListener('click', startQuiz);
+document.addEventListener("DOMContentLoaded", function() {
+    startButton.addEventListener('click', startQuiz);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     nextQuestion()
 });
+scoresButton.addEventListener('click', showScore);
+
+
+});
+
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const scoresButton = document.getElementById('scores-btn');
+const questionContainerElement = document.getElementById('question-container');
+const introText = document.getElementById('header-text');
+const questionAsked = document.getElementById('question');
+const answerChoices = document.getElementById('answer-btns');
+const resultShow = document.getElementById('results');
+
+let shuffledQuestions, currentQuestionIndex;
 
 let score = 0;
 let questionCounter = 0;
 let acceptingAnswers = true;
 let correctAnwsers = true;
 let incorrectAnswers = true;
-let points;
 
 
-
-
-// Functions
+// FUNCTIONS
 
 /**
  * Starts and runs the game
@@ -34,7 +35,7 @@ let points;
 function startQuiz() {
     correctAnwsers = 0
     startButton.classList.add('hide');
-    answerButtons.classList.remove('hide');
+    answerChoices.classList.remove('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionAsked.classList.remove('hide');
@@ -49,8 +50,6 @@ function nextQuestion() {
         nextButton.classList.remove('hide')
     } else {
         scoresButton.classList.remove('hide')
-        //startButton.innerText = 'Restart',
-        //startButton.classList.remove('hide')
     }
 }
 
@@ -86,7 +85,6 @@ function selectAnswer(e) {
     Array.from(answerChoices.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-    
 }
 
 /** 
@@ -101,9 +99,6 @@ function setStatusClass(element, correct) {
     }
 }
 
-
-
-
 /**
  * Clears the background color of correct and incorrect answers
  */
@@ -112,7 +107,13 @@ function clearStatusClass (element) {
     element.classList.remove('wrong')
 }
 
-
+function showScore() {
+    let username = document.getElementById('username-input').value;
+    var pointsArray = []
+    pointsArray.push(`${username} + your score is: ${correctAnwsers}`)
+    resultShow.innerText = pointsArray;
+    
+}
 
 /**
  * Gets the current score from the DOM and increments the correct score
@@ -130,7 +131,7 @@ function incrementWrongScore() {
     document.getElementById("incorrect").innerText = ++newScore;
 }
 
-// Quiz questions array
+// QUIZ QUESTIONS AND ANSWERS ARRAY
 const questions = [
     {
         question: 'In what continent is the Netherlands located?',
