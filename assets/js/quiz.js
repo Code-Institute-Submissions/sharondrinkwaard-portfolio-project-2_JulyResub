@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     currentQuestionIndex++
     nextQuestion()
 });
-scoresButton.addEventListener('click', showScore);
 
 
 });
@@ -23,9 +22,10 @@ let shuffledQuestions, currentQuestionIndex;
 let score = 0;
 let questionCounter = 0;
 let acceptingAnswers = true;
-//let correctAnwsers = true;
-//let incorrectAnswers = true;
-
+let correctAnwsers = true;
+// Getting the storage Object and adding the scores to it
+let storageObject = localStorage.getItem('quiz-scores'); 
+storageObject = JSON.parse(storageObject);
 
 // FUNCTIONS
 
@@ -33,7 +33,7 @@ let acceptingAnswers = true;
  * Starts and runs the game
  */
 function startQuiz() {
-    correctAnwsers = 0
+    let score = 0
     startButton.classList.add('hide');
     answerChoices.classList.remove('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
@@ -49,6 +49,8 @@ function nextQuestion() {
     if (shuffledQuestions.length > currentQuestionIndex +1) {
         nextButton.classList.remove('hide')
     } else {
+        // this should only run after the game is complete
+        localStorage.setItem('quiz-scores', JSON.stringify({...storageObject, scores: score}))
         scoresButton.classList.remove('hide')
     }
 }
@@ -76,8 +78,8 @@ function resetState() {
 
 function selectAnswer(e) {
     if (e.target.dataset.correct) {
-        correctAnwsers++
-        console.log(correctAnwsers)
+        score++
+        console.log(score)
     }
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
@@ -105,48 +107,6 @@ function setStatusClass(element, correct) {
 function clearStatusClass (element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
-}
-
-
-//
-
-    /*const usernameInput = JSON.parse(localStorage.getItem('username-input'))
-    const highScores = JSON.parse(localStorage.getItem('highScores'))
-    const highScoresList = document.getElementById('highScoresList');
-    const scores = {
-    scores: correctAnwsers,
-    name: usernameInput.value
-    }
-
-function enterUsername() {
-    
-    usernameInput.push(scores)
-}
-
-function showScore() {
-    
-    
-    highScores.push(scores);
-    highScoresList.innerHTML = highScores.map(scores => { return `<li class="highScores">${scores.name} + ${scores.scores}</li>`}).join('')
-   
-    localStorage.setItem('highScores', JSON.stringify(highScores))
-    window.location.assign('/')
-}*/
-
-/**
- * Gets the current score from the DOM and increments the correct score NOT IN USE
- */
-function incrementCorrectScore() {
-    let newScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++newScore;
-}
-
-/**
- * Gets the current score fom the DOM and increments the incorrect score NOT IN USE
- */
-function incrementWrongScore() {
-    let newScore = parseInt(document.getElementById("incorrect").innerText);
-    document.getElementById("incorrect").innerText = ++newScore;
 }
 
 // QUIZ QUESTIONS AND ANSWERS ARRAY
@@ -224,5 +184,6 @@ const questions = [
         ]
     }
 ]
+
 // Img array for 1 specific question -- NOT WORKING YET
 //imgAray = ['france_flag.png', 'netherlands_flag.png', 'spain_flag.png', 'sweden_flag.png'];
