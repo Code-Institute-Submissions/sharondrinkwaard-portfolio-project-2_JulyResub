@@ -13,11 +13,14 @@
     <section class="background-container">
         <div class="quiz-container">
             
-            <div class="header-text">
+            <div id="highScores" class="header-text">
                 <h1>Highscores</h1>
-                <p id="results">results</p>
+                <ul id="highScoresList">results</ul>
             </div>
             <div class="index-btns btn-grid">
+                <button id="start-btn" class="start-btn btn hide">Start Quiz</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+                <button id="scores-btn" class="btn hide" onclick="window.location.href='highscores.html'">See scores</button>
                 <a href="quiz.html" class="btn">Start Again</a>
                 <a href="index.html" class="btn">Home Page</a>
             </div>
@@ -25,5 +28,6 @@
     </section>
 
     <script src="/assets/js/quiz.js"></script>
+    <script src="/assets/js/scores.js"></script>
 </body>
 </html>

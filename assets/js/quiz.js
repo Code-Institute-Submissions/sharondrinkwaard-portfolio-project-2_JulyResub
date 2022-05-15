@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     startButton.addEventListener('click', startQuiz);
-nextButton.addEventListener('click', () => {
+    nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     nextQuestion()
 });
@@ -23,8 +23,8 @@ let shuffledQuestions, currentQuestionIndex;
 let score = 0;
 let questionCounter = 0;
 let acceptingAnswers = true;
-let correctAnwsers = true;
-let incorrectAnswers = true;
+//let correctAnwsers = true;
+//let incorrectAnswers = true;
 
 
 // FUNCTIONS
@@ -107,16 +107,34 @@ function clearStatusClass (element) {
     element.classList.remove('wrong')
 }
 
-function showScore() {
-    let username = document.getElementById('username-input').value;
-    var pointsArray = []
-    pointsArray.push(`${username} + your score is: ${correctAnwsers}`)
-    resultShow.innerText = pointsArray;
+
+//
+
+    /*const usernameInput = JSON.parse(localStorage.getItem('username-input'))
+    const highScores = JSON.parse(localStorage.getItem('highScores'))
+    const highScoresList = document.getElementById('highScoresList');
+    const scores = {
+    scores: correctAnwsers,
+    name: usernameInput.value
+    }
+
+function enterUsername() {
     
+    usernameInput.push(scores)
 }
 
+function showScore() {
+    
+    
+    highScores.push(scores);
+    highScoresList.innerHTML = highScores.map(scores => { return `<li class="highScores">${scores.name} + ${scores.scores}</li>`}).join('')
+   
+    localStorage.setItem('highScores', JSON.stringify(highScores))
+    window.location.assign('/')
+}*/
+
 /**
- * Gets the current score from the DOM and increments the correct score
+ * Gets the current score from the DOM and increments the correct score NOT IN USE
  */
 function incrementCorrectScore() {
     let newScore = parseInt(document.getElementById("score").innerText);
@@ -124,7 +142,7 @@ function incrementCorrectScore() {
 }
 
 /**
- * Gets the current score fom the DOM and increments the incorrect score
+ * Gets the current score fom the DOM and increments the incorrect score NOT IN USE
  */
 function incrementWrongScore() {
     let newScore = parseInt(document.getElementById("incorrect").innerText);

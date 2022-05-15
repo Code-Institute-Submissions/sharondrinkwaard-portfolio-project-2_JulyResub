@@ -12,17 +12,22 @@
     <section class="background-container"> 
         <div class="quiz-container">
             <div class="header-text">
-                <h1>The Dutch Quiz</h1>
-                <p>Facts about the Netherlands</p>
+                <h1>Welcome to The Dutch Quiz</h1>
                 <p>Are you ready?</p>
             </div>
-            <div>
-                <label for="username-input">Your username</label>
-                <input id="username-input" type="text" name="name" placeholder="Username" required>
-                <button class="btn" type="submit">Enter</button>
+            <div class="btn-grid">
+                <form name="form" id="form-id">
+                    <label id="label" for="username-input">Your username</label>
+                    <input id="username-input" type="text" name="name" placeholder="Username" required>
+                    <button class="btn" type="submit">Enter</button>
+                </form>
+
+                
+                <button type="button" id="start-btn" class="start-btn btn" onclick="window.location.href='quiz.html'">Start Quiz</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+                <button id="scores-btn" class="btn hide" onclick="window.location.href='highscores.html'">See scores</button>
             </div>
-            <button type="button" id="start-btn" class="start-btn btn" onclick="window.location.href='quiz.html'">Start Quiz</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
+            
         </div>
         <div class="hide">
             <img id="france" src="/assets/images/france_flag.png" alt="France flag">
@@ -33,5 +38,6 @@
     </section>
 
     <script src="/assets/js/quiz.js"></script>
+    <script src="/assets/js/begin.js"></script>
 </body>
 </html>
