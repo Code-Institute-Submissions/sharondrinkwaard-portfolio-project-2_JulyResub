@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A quiz game about the Netherlands">
     <!--Stylesheets-->
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/highscores.css">
     <title>Highscores</title>
 </head>
 <body>
@@ -14,13 +14,13 @@
         <div class="quiz-container">
             
             <div id="highScores" class="header-text">
-                <h1>Highscores</h1>
-                <ul id="highScoresList">results</ul>
+                <h1>Out of 10 points you got:</h1>
+                <ul id="highScoresList" class=""></ul>
             </div>
             <div class="index-btns btn-grid">
-                <button id="start-btn" class="start-btn btn hide">Start Quiz</button>
+                <button id="start-btn" class="start-btn btn hide" onclick="window.location.href='index.html'">Start Quiz</button>
                 <button id="next-btn" class="next-btn btn hide">Next</button>
-                <button id="scores-btn" class="btn" onclick="showScores()">See scores</button>
+                <button id="scores-btn" class="btn" onclick="showScores()">Show Me</button>
                 <a href="quiz.html" class="btn hide">Start Again</a>
                 <a href="index.html" class="btn hide">Home Page</a>
             </div>

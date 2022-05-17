@@ -28,7 +28,8 @@
     margin: auto;
     margin-top: 15%;
     width: 800px;
-    max-width: 50%;
+    min-width: 50%;
+    max-width: 60%;
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: rgb(255,255,255, .7);
@@ -42,6 +43,8 @@
     font-size: xx-large;
     font-weight: bold;
     margin-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .btn-grid {
@@ -113,9 +116,23 @@
 
 
 
-
-
-/*@media screen and (max-width:) {
-    
+/* Media queries for screens 800px and below */
+@media screen and (max-width:800px) {
+    .header-tex {
+        font-size: small;
+    }
+    .quiz-container {
+        min-width: 80%;
+        
+    }
 }
-*/
+
+/* Media query for screens 400px and below */
+@media screen and (max-width:400px) {
+    .header-tex {
+        font-size: small;
+    }
+    .quiz-container {
+        min-width: 80%;
+    }
+}

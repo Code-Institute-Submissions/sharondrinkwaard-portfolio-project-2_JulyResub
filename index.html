@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A quiz game about the Netherlands">
     
     <link rel="stylesheet" href="/assets/css/style.css">
     <title>Dutch Quiz</title>
@@ -13,27 +14,21 @@
         <div class="quiz-container">
             <div class="header-text">
                 <h1>Welcome to The Dutch Quiz</h1>
-                <p>Are you ready?</p>
+                <p>Create a username to save your score</p>
             </div>
             <div class="btn-grid">
                 <form name="form" id="form-id">
                     <label id="label" for="username-input">Your username</label>
                     <input id="username-input" type="text" name="name" placeholder="Username" required>
-                    <button class="btn" type="submit">Enter</button>
+                    <button id="enter" class="btn" type="submit" onclick="window.location.href='quiz.html'">Enter</button>
                 </form>
 
                 
-                <button type="button" id="start-btn" class="start-btn btn" onclick="window.location.href='quiz.html'">Start Quiz</button>
+                <!--<button type="button" id="start-btn" class="start-btn btn" >Start Quiz</button>-->
                 <button id="next-btn" class="next-btn btn hide">Next</button>
                 <button id="scores-btn" class="btn hide" onclick="window.location.href='highscores.html'">See scores</button>
             </div>
             
-        </div>
-        <div class="hide">
-            <img id="france" src="/assets/images/france_flag.png" alt="France flag">
-            <img id="netherlands" src="/assets/images/netherlands_flag.png" alt="Netherlands flag">
-            <img id="spain" src="/assets/images/spain_flag.png" alt="Spanish flag">
-            <img id="sweden" src="/assets/images/sweden_flag.png" alt="Swedish flag">
         </div>
     </section>
     <script src="/assets/js/begin.js"></script>

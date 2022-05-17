@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Stylesheets-->
+    <meta name="description" content="A quiz game about the Netherlands">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/quiz.css">
     <title>Quiz Page</title>
 </head>
 <body>
 
     <section class="background-container">
         <div class="quiz-container">
-            <div id="question-container" class="hide"></div>
+            <div id="question-container" class="header-text">
+                <h1>Are you ready?</h1>
+            </div>
             <div id="question" class="header-text hide">Question</div>
             <div id="answer-btns" class="btn-grid hide">
                 <button id="choice1" class="btn">Answer 1</button>
@@ -27,10 +28,6 @@
                 <button id="next-btn" class="next-btn btn hide">Next</button>
                 <button id="scores-btn" class="btn hide" onclick="window.location.href='highscores.html'">See scores</button>
             </div>
-
-        <div class="score-area hide">
-        <p class="scores">Your score<span id="score">0</span></p>
-    
         </div>
     </section>
     
