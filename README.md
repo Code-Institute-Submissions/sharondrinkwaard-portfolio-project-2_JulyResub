@@ -59,6 +59,7 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
     * Some errors occured when passing through the JSHint JavaScript validator. These were very easy to fix as mostly I forgot to add semicolons on the correct place. When passing through the validator again, there were no errors anymore.
 ### Unfixed Bugs
 * No unfixed bugs
+---
 
 ## Deployment
 The site was deployed to GitHub pages. The steps to deploy are as follows:
@@ -69,6 +70,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 The link can be found here: https://sharondrinkwaard.github.io/portfolio-project-2/
 
+---
 ## Credits
 
 ### Content
