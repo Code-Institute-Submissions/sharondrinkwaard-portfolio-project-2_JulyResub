@@ -34,13 +34,13 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 
 ### Features left to implement
 * I would like to expand this quiz to several quizzes.  Each one with facts about another country. One homepage where the user can create a username which can be used to save scores for all quizzes available. Continuing with a dropdown menu where the user can choose the different country quizzes.
-*  I would like to add a database so highscores can be saved from people all over the world. Then an actual competition can take place.
+*  I would like to add a database so highscores can be saved from people all over the world.
 ---
 ## Testing
 * I tested playing this game in the browsers: Chrome, Microsoft Edge.
 * I confirmed that the game results are always correct and the points are counted perfectly.
 * I confirmed that the header, questions and anwers, scores and buttons text is readable and easy to understand.
-* I confirmed that the background, fonts and colors chosen are easy to read and accesible by running it through lighthouse in devtools.
+* I confirmed that the quiz is fully accesible by running it through lighthouse in devtools.
 * I confirm that this design is responsive, looks good and functions on all standard screensizes using the devtools device toolbar.
 
 ### Bugs
@@ -58,7 +58,19 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 * No unfixed bugs
 
 ## Deployment
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the GitHub repository, navigate to Settings
+- On your left you can find the menu. Scroll down and navigate to Pages
+- From the source section drop-down menu, select Main and click on Save
+- On top of the page a link will show saying that the website is publiced
+
+The link can be found here: https://sharondrinkwaard.github.io/portfolio-project-2/
 
 ## Credits
+
 ### Content
+* The lettertype was taken from [Google Fonts](https://fonts.google.com/)
+* The favicon was taken fom [Favicon](https://favicon.io/)
+* Instructions on how to use JSON were taken from [W3schools](https://www.w3schools.com/) and [Brian Design](https://www.youtube.com/channel/UCsKsymTY_4BYR-wytLjex7A) on Youtube
 ### Media
+* The background image is taken from [Pexels](https://www.pexels.com/nl-nl/)

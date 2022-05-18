@@ -13,7 +13,4 @@ function showScores() {
     startButton.innerText = 'Start again';
     startButton.classList.remove('hide');
     scoresButton.classList.add('hide');
-
 }
-
-

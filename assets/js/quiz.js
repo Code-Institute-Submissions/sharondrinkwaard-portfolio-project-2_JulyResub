@@ -1,6 +1,5 @@
 // Load DOM content before starting the game
 document.addEventListener("DOMContentLoaded", function() {
-    //enter.addEventListener('click', startQuiz);
     startButton.addEventListener('click', startQuiz);
     nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
@@ -12,18 +11,12 @@ const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const scoresButton = document.getElementById('scores-btn');
 const questionContainer = document.getElementById('question-container');
-//const introText = document.getElementById('header-text');
 const questionAsked = document.getElementById('question');
 const answerChoices = document.getElementById('answer-btns');
-//const resultShow = document.getElementById('results');
-//let enter = document.getElementById('enter');
 
 let shuffledQuestions, currentQuestionIndex;
 
 let score = 0;
-//let questionCounter = 0;
-//let acceptingAnswers = true;
-//let correctAnwsers = true;
 // Getting the storage object - I learned this from Sean from Tutor support, and from Brian Design on YouTube
 let storageObject = localStorage.getItem('quiz-scores'); 
 storageObject = JSON.parse(storageObject);
@@ -54,7 +47,6 @@ function nextQuestion() {
     if (shuffledQuestions.length > currentQuestionIndex +1) {
         nextButton.classList.remove('hide');
     } else {
-        // this should only run after the game is complete
         localStorage.setItem('quiz-scores', JSON.stringify({...storageObject, scores: score}));
         scoresButton.innerText = 'Save';
         scoresButton.classList.remove('hide');
@@ -81,6 +73,7 @@ function resetState() {
         answerChoices.removeChild(answerChoices.firstChild);
     }
 }
+
 /** 
  * Counts the scores and logs them to the console
  */
@@ -156,6 +149,15 @@ const questions = [
         ]
     },
     {
+        question: 'How many citizens does the Netherlands have?',
+        answers: [
+            { text: '8 million', correct: false },
+            { text: '10 million', correct: false },
+            { text: '17 million', correct: true, correctAnwsers: true, points: 1 },
+            { text: '20 million', correct: false }
+        ]
+    },
+    {
         question: 'Where do the Dutch use windmills for?',
         answers: [
             { text: 'To generate electricity', correct: false },
@@ -171,6 +173,15 @@ const questions = [
             { text: 'Higher countries', correct: false },
             { text: 'Flat countries', correct: false },
             { text: 'Lower countries', correct: true, correctAnwsers: true, points: 1 }
+        ]
+    },
+    {
+        question: 'What is the average life expectancy of a Dutch person?',
+        answers: [
+            { text: 'Less than 70 years', correct: false },
+            { text: 'Around 75 years', correct: false },
+            { text: 'Around 82 years', correct: true, correctAnwsers: true, points: 1 },
+            { text: 'Over 92 years', correct: false }
         ]
     },
     {
