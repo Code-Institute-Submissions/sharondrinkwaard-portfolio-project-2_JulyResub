@@ -62,14 +62,6 @@
     font-size: x-large;
 }
 
-#label {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: x-large;
-}
-
-
 /* Buttons styling and hover */
 .btn {
     background-color: rgb(235, 7, 161, .8);
@@ -91,7 +83,7 @@
     transition: transform 150ms;
 }
 
-/* Button color to show if the answer is right of wrong */
+/* Button background color to show if the answer is right of wrong */
 .correct {
     background-color: green;
 }
@@ -111,7 +103,6 @@
 .hide {
     display: none;
 }
-
 
 
 /* Media query for screens 850 and below */
@@ -147,5 +138,4 @@
         gap: 5px;
         padding: 10px;
     }
-    
 }
