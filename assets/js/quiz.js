@@ -122,6 +122,15 @@ const questions = [
         ]
     },
     {
+        question: 'How many windmills are there in the Netherlands?',
+        answers: [
+            { text: '< 100', correct: false },
+            { text: '> 1000', correct: true, correctAnwsers: true, points: 1 },
+            { text: '< 500', correct: false },
+            { text: '> 5000', correct: false }
+        ]
+    },
+    {
         question: 'What language do they speak in the Netherlands?',
         answers: [
             { text: 'Flemish', correct: false },

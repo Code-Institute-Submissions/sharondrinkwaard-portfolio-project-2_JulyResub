@@ -43,6 +43,9 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 * I confirmed that the quiz is fully accesible by running it through lighthouse in devtools.
 * I confirm that this design is responsive, looks good and functions on all standard screensizes using the devtools device toolbar.
 
+![Lighthouse report](./doc/lighthouse-report.png)
+
+
 ### Bugs
 #### Solved bugs
 * When passing through the validators, I discovered that there were a few pages not correctly linked to the right JavasScript file. On the index.html file I linked two different JavaScript files instead of one.
