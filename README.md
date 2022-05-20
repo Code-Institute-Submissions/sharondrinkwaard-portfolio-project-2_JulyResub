@@ -1,5 +1,5 @@
 # The Dutch quiz
-This quiz game will help you learn some facts about the Netherlands in a fun way. The facts are very random and are shuffled each time you play this game. Are you ready to play and earn all the 10 points?
+This quiz game will help you learn some facts about the Netherlands in a fun way. The facts are very random and are shuffled each time you play this game. I designed this quiz mainly for people who recently moved to the Netherlands and help them gain some knowlegde and conversation material. But actually this quiz is fun to play for everyone! <br> Are you ready to play and earn all the 10 points?
 
 ![This is a mockup of the quiz](./doc/mockup-quiz.png)
 
@@ -9,6 +9,7 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 * Header
     * Featured at the first page of the game. The header welcomes you to the quiz and shows the game name "The Dutch Quiz".
     * It directs you to create a username.
+    * If the user does not enter a username, the quiz will not start.
     * All text clearly contrasts with the background as there is a white padding behind it.
 
 ![Index page](./doc/create-username-page.png)
@@ -49,16 +50,25 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 ### Bugs
 #### Solved bugs
 * When passing through the validators, I discovered that there were a few pages not correctly linked to the right JavasScript file. On the index.html file I linked two different JavaScript files instead of one.
-* I accidentely used the absolute file path to locate files and images etc. I changed this to the relative file path. 
+* I accidentely used the absolute file path to locate files and images etc. I changed this to the relative file path.
+* When deploying my quiz, I realised that the user could play the game without entering a username. 
+I added an extra function when clicking on the "Enter" button. See the code below: 
+```
+function enterQuiz(enterButton) {
+    if (document.getElementById('username-input').value === "") {
+        enterButton.disabled = true;
+    }
+};
+``` 
 ### Validator Testing
 * HTML
     * No errors were returned when passing through the  W3C HTML validator
 * CSS
     * No errors were returned when passing through the CSS Jigsaw validator
 * JavaScript
-    * Some errors occured when passing through the JSHint JavaScript validator. These were very easy to fix as mostly I forgot to add semicolons on the correct place. When passing through the validator again, there were no errors anymore.
+    * No errors were returned when passing through the JavaScript JSHint validator. 
 ### Unfixed Bugs
-* No unfixed bugs
+* To my knowledge, there are no unfixed bugs at this moment.
 ---
 
 ## Deployment
@@ -75,7 +85,6 @@ The link can be found here: https://sharondrinkwaard.github.io/portfolio-project
 
 ### Content
 * The lettertype was taken from [Google Fonts](https://fonts.google.com/)
-* The favicon was taken fom [Favicon](https://favicon.io/)
 * Instructions on how to use JSON were taken from [W3schools](https://www.w3schools.com/) and [Brian Design](https://www.youtube.com/channel/UCsKsymTY_4BYR-wytLjex7A) on Youtube
 ### Media
 * The background image is taken from [Pexels](https://www.pexels.com/nl-nl/)
