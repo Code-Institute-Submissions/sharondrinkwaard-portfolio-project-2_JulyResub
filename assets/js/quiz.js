@@ -75,9 +75,10 @@ function resetState() {
 }
 
 /** 
- * Counts the scores and logs them to the console
+ * Counts the scores
  */
 function selectAnswer(e) {
+
     if (e.target.dataset.correct) {
         score++;
         console.log(score);
