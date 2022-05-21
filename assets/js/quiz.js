@@ -21,6 +21,11 @@ let score = 0;
 let storageObject = localStorage.getItem('quiz-scores'); 
 storageObject = JSON.parse(storageObject);
 
+scoresButton.addEventListener('click', event => {
+    event.preventDefault();
+    window.location.href = '/highscores.html'
+});
+
 // FUNCTIONS
 
 /**
