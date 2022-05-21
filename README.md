@@ -36,6 +36,7 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 ### Features left to implement
 * I would like to expand this quiz to several quizzes.  Each one with facts about another country. One homepage where the user can create a username which can be used to save scores for all quizzes available. Continuing with a dropdown menu where the user can choose the different country quizzes.
 *  I would like to add a database so highscores can be saved from people all over the world.
+* I would like to add more questions with more different kinds of content like images. Unfortunately I ran out of time before the submission date so I will leave this for later.
 ---
 ## Testing
 * I tested playing this game in the browsers: Chrome, Microsoft Edge.
@@ -52,13 +53,12 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 * When passing through the validators, I discovered that there were a few pages not correctly linked to the right JavasScript file. On the index.html file I linked two different JavaScript files instead of one.
 * I accidentely used the absolute file path to locate files and images etc. I changed this to the relative file path.
 * When deploying my quiz, I realised that the user could play the game without entering a username. 
-I added an extra function when clicking on the "Enter" button. See the code below: 
+I added an extra "addEventListener" when clicking on the "Enter" button. See the code below: 
 ```
-function enterQuiz(enterButton) {
-    if (document.getElementById('username-input').value === "") {
-        enterButton.disabled = true;
-    }
-};
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    window.location.href = '/quiz.html'
+});
 ``` 
 ### Validator Testing
 * HTML
@@ -85,6 +85,6 @@ The link can be found here: https://sharondrinkwaard.github.io/portfolio-project
 
 ### Content
 * The lettertype was taken from [Google Fonts](https://fonts.google.com/)
-* Instructions on how to use JSON were taken from [W3schools](https://www.w3schools.com/) and [Brian Design](https://www.youtube.com/channel/UCsKsymTY_4BYR-wytLjex7A) on Youtube
+* Instructions on how to use JSON were taken from [W3schools](https://www.w3schools.com/js/js_json_intro.asp) and [Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2567s) on Youtube
 ### Media
-* The background image is taken from [Pexels](https://www.pexels.com/nl-nl/)
+* The background image is taken from [iStock](https://www.istockphoto.com/nl/foto/traditionele-nederlandse-windmolens-en-huizen-in-de-buurt-van-het-kanaal-in-zaanstad-gm937057490-256331390)
