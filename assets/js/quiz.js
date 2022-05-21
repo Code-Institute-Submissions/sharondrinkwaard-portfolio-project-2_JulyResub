@@ -82,6 +82,8 @@ function selectAnswer(e) {
     if (e.target.dataset.correct) {
         score++;
         console.log(score);
+        // This disables the buttons to be clicked again so the scores can only increase once per question
+        e.target.style.pointerEvents = 'none';
     }
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
