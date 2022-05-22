@@ -36,16 +36,18 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 ### Features left to implement
 * I would like to expand this quiz to several quizzes.  Each one with facts about another country. One homepage where the user can create a username which can be used to save scores for all quizzes available. Continuing with a dropdown menu where the user can choose the different country quizzes.
 *  I would like to add a database so highscores can be saved from people all over the world.
-* I would like to add more questions with more different kinds of content like images. Unfortunately I ran out of time before the submission date so I will leave this for later.
+* I would like to add an extra JS file where the questions will be located, instead of in the main quiz file like right now. And then add more questions with different kinds of content like images. Unfortunately I ran out of time before the submission date so I will leave this for later.
 ---
 ## Testing
 * I tested playing this game in the browsers: Chrome, Microsoft Edge.
 * I confirmed that the game results are always correct and the points are counted perfectly.
 * I confirmed that the header, questions and anwers, scores and buttons text is readable and easy to understand.
 * I confirmed that the quiz is fully accesible by running it through lighthouse in devtools.
-* I confirm that this design is responsive, looks good and functions on all standard screensizes using the devtools device toolbar.
 
-![Lighthouse report](./doc/lighthouse-report.png)
+![Lighthouse report](./doc/lighthouse-report-1.png)
+
+* I confirm that this design is responsive, looks good and functions on all standard screensizes using the devtools device toolbar. I used two media queries for responsiveness at screen "max-width:850px" and at "max-width:440px". 
+
 
 
 ### Bugs
@@ -59,7 +61,23 @@ form.addEventListener('submit', event => {
     event.preventDefault();
     window.location.href = '/quiz.html'
 });
-``` 
+```
+* While testing the quiz, I realised the user was not able to stop or start over while playing. So I added a 'Restart' and 'Home' button. 
+```
+<section id="console" class="hide">
+    <a href="index.html" class="btn-link btn">Home</a>
+    <a href="quiz.html" class="btn-link btn">Restart</a>
+</section>
+```
+* The last thing I discovered was that the user could keep clicking on an answer of the same question which increased the score each time. I want the user to earn a maximum of one point per correct answer and not 15 for example.
+I disabled the buttons to be clicked again and used the following code for this:
+```
+ if (e.target.dataset.correct) {
+        score++;
+        e.target.style.pointerEvents = 'none';
+    }
+```
+
 ### Validator Testing
 * HTML
     * No errors were returned when passing through the  W3C HTML validator
@@ -86,5 +104,6 @@ The link can be found here: https://sharondrinkwaard.github.io/portfolio-project
 ### Content
 * The lettertype was taken from [Google Fonts](https://fonts.google.com/)
 * Instructions on how to use JSON were taken from [W3schools](https://www.w3schools.com/js/js_json_intro.asp) and [Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2567s) on Youtube
+* The basic quiz code I used is from [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k). This teacher helped me the most with understanding JavaScript.
 ### Media
 * The background image is taken from [iStock](https://www.istockphoto.com/nl/foto/traditionele-nederlandse-windmolens-en-huizen-in-de-buurt-van-het-kanaal-in-zaanstad-gm937057490-256331390)

@@ -57,7 +57,6 @@ function nextQuestion() {
         nextButton.classList.remove('hide');
     } else {
         localStorage.setItem('quiz-scores', JSON.stringify({...storageObject, scores: score}));
-        scoresButton.innerText = 'Save';
         scoresButton.classList.remove('hide');
     }
 }
@@ -224,6 +223,3 @@ const questions = [
         ]
     }
 ];
-
-// Img array for 1 specific question -- NOT WORKING YET
-//imgAray = ['france_flag.png', 'netherlands_flag.png', 'spain_flag.png', 'sweden_flag.png'];
