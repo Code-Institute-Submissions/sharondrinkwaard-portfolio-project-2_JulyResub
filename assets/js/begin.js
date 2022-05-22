@@ -8,7 +8,7 @@ const form = document.getElementById('form-id');
 // Alerts the user when there is no username filled in and prevents the 'Enter' button from functioning.
 form.addEventListener('submit', event => {
     event.preventDefault();
-    window.location.href = '/quiz.html'
+    window.location.href = '/quiz.html';
 });
 
 form.onsubmit = function (event) {

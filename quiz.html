@@ -12,30 +12,30 @@
 <body>
     <main class="background-container">
         <div class="quiz-container">
-            <div id="question-container" class="header-text">
+            <section id="question-container" class="header-text">
                 <h1>Are you ready?</h1>
-            </div>
+            </section>
             <!-- Main question area, here will the questions be displayed -->
             <div id="question" class="header-text hide">Question</div>
-            <section id="answer-btns" class="btn-grid hide">
+            <div id="answer-btns" class="btn-grid hide">
                 <!-- Answer buttons, here will the possible answers be displayed -->
                 <button id="choice1" class="btn answer-btn">Answer 1</button>
                 <button id="choice2" class="btn answer-btn">Answer 2</button>
                 <button id="choice3" class="btn answer-btn">Answer 3</button>
                 <button id="choice4" class="btn answer-btn">Answer 4</button>
-            </section>
+            </div>
 
-            <section class="controls btn-grid">
+            <div class="controls btn-grid">
                 <!-- Buttons to play the game, restart of show the scores -->
                 <button id="start-btn" class="start-btn btn">Start Quiz</button>
                 <button id="next-btn" class="next-btn btn hide">Next</button>
                 <button id="scores-btn" class="btn hide">Save</button>
-            </section>
-            <section id="console" class="hide">
+            </div>
+            <div id="console" class="hide">
                 <!-- Links to restart the quiz or go back to the home page, shown only during the quiz-->
                 <a href="index.html" class="btn-link btn">Home</a>
                 <a href="quiz.html" class="btn-link btn">Restart</a>
-            </section>
+            </div>
         </div>
     </main>
     <script src="assets/js/quiz.js"></script>
