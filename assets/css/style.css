@@ -76,6 +76,11 @@
     font-weight: bold;
 }
 
+.btn-link {
+    text-decoration: none;
+    font-size: small;
+}
+
 .btn:hover {
     color: black;
     background-color: rgb(235, 7, 161, .7);

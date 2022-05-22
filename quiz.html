@@ -10,7 +10,7 @@
     <title>Quiz Page</title>
 </head>
 <body>
-    <section class="background-container">
+    <main class="background-container">
         <div class="quiz-container">
             <div id="question-container" class="header-text">
                 <h1>Are you ready?</h1>
@@ -31,12 +31,13 @@
                 <button id="next-btn" class="next-btn btn hide">Next</button>
                 <button id="scores-btn" class="btn hide">See scores</button>
             </div>
-            <div>
-                <a href="quiz.html" class="btn hide">Start Quiz Again</a>
-                <a href="index.html" class="btn hide">Go to Home Page</a>
+            <div id="console" class="hide">
+                <!-- Links to restart the quiz or go back to the home page, shown only during the quiz-->
+                <a href="index.html" class="btn-link btn">Home</a>
+                <a href="quiz.html" class="btn-link btn">Restart</a>
             </div>
         </div>
-    </section>
+    </main>
     <script src="assets/js/quiz.js"></script>
 </body>
 </html>

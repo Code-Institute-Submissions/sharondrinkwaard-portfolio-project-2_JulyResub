@@ -13,6 +13,7 @@ const scoresButton = document.getElementById('scores-btn');
 const questionContainer = document.getElementById('question-container');
 const questionAsked = document.getElementById('question');
 const answerChoices = document.getElementById('answer-btns');
+const consoleButtons = document.getElementById('console');
 
 let shuffledQuestions, currentQuestionIndex;
 
@@ -21,6 +22,7 @@ let score = 0;
 let storageObject = localStorage.getItem('quiz-scores'); 
 storageObject = JSON.parse(storageObject);
 
+// This links to the scores page, I used this instead of the previous 'onclick' event in HTML
 scoresButton.addEventListener('click', event => {
     event.preventDefault();
     window.location.href = '/highscores.html'
@@ -32,8 +34,10 @@ scoresButton.addEventListener('click', event => {
  * Starts and runs the game
  */
 function startQuiz() {
+    // Using the 'hide' class makes buttons and links appear and disappear at the right time
     startButton.classList.add('hide');
     questionContainer.classList.add('hide');
+    consoleButtons.classList.remove('hide');
     answerChoices.classList.remove('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
