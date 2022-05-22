@@ -105,6 +105,7 @@
     display: grid;    
 }
 
+/* This class I use a lot to hide or show buttons and content at the right time */
 .hide {
     display: none;
 }
