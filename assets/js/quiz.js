@@ -25,7 +25,7 @@ storageObject = JSON.parse(storageObject);
 // This links to the scores page, I used this instead of the previous 'onclick' event in HTML
 scoresButton.addEventListener('click', event => {
     event.preventDefault();
-    window.location.href = '/highscores.html';
+    window.location.href = 'highscores.html';
 });
 
 // FUNCTIONS

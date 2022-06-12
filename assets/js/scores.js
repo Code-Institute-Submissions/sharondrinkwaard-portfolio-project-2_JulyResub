@@ -15,5 +15,5 @@ const highScoresList = document.getElementById('highScoresList');
 // Directs to the home page, instead of the onclick event previously used
 startButton.addEventListener('click', event => {
     event.preventDefault();
-    window.location.href = '/index.html';
+    window.location.href = 'index.html';
 });
