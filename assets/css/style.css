@@ -17,7 +17,7 @@
     background-size: cover;
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 97vh;
     overflow: hidden;
     background-color: blueviolet;
 }
@@ -103,6 +103,19 @@
 
 .controls {
     display: grid;    
+}
+
+footer {
+    width: 100vw;
+    height: 3vh;
+    position: fixed;
+    background-color: orchid;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
+    
 }
 
 /* This class I use a lot to hide or show buttons and content at the right time */
