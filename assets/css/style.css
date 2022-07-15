@@ -15,17 +15,13 @@
 .background-container {
     background: url("../images/netherlands-tulip-field.jpg") no-repeat center center fixed;
     background-size: cover;
-    position: relative;
-    width: 100vw;
-    height: 97vh;
-    overflow: hidden;
     background-color: blueviolet;
 }
 
 /* main div positioning */
 .quiz-container {
     margin: auto;
-    margin-top: 15%;
+    margin-top: 10%;
     width: 800px;
     min-width: 50%;
     max-width: 60%;
@@ -39,11 +35,43 @@
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
-    font-size: x-large;
+    text-align: center;
+    font-size: larger;
     font-weight: bold;
     margin-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+#header {
+    font-size: larger;
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.question-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+footer {
+    width: 100vw;
+    height: 3vh;
+    position: fixed;
+    bottom: 0;
+    background-color: orchid;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .btn-grid {
@@ -66,7 +94,7 @@
 .btn {
     background-color: rgb(235, 7, 161, .8);
     color: white;
-    font-size: x-large;
+    font-size: larger;
     border-radius: 5px;
     text-decoration: none;
     padding: 15px;
@@ -83,7 +111,6 @@
 
 .btn:hover {
     color: black;
-    background-color: rgb(235, 7, 161, .7);
     transform: scale(1.04);
     transition: transform 150ms;
 }
@@ -94,7 +121,7 @@
 }
 
 .wrong {
-    background: red;
+    background-color: red;
 }
 
 .correct-answer {
@@ -105,20 +132,7 @@
     display: grid;    
 }
 
-footer {
-    width: 100vw;
-    height: 3vh;
-    position: fixed;
-    background-color: orchid;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    padding-left: 5%;
-    padding-right: 5%;
-    
-}
-
-/* This class I use a lot to hide or show buttons and content at the right time */
+/* This class is used a lot to hide or show buttons and content at the right time */
 .hide {
     display: none;
 }
@@ -126,7 +140,13 @@ footer {
 
 /* Media query for screens 850 and below */
 @media screen and (max-width:850px) {
+    #header {
+        font-size: medium;
+    }
     .header-text {
+        font-size: larger;
+    }
+    .question-text {
         font-size: x-large;
     }
     .quiz-container {
@@ -140,6 +160,9 @@ footer {
 /* Media query for screens 440 and below */
 @media screen and (max-width:440px) {
     .header-text {
+        font-size: medium;
+    }
+    .question-text {
         font-size: larger;
     }
     .quiz-container {
@@ -159,5 +182,10 @@ footer {
     }
     .btn-link {
         font-size: smaller;
+    }
+    footer {
+        font-size: small;
+        display: flex;
+        align-items: center;
     }
 }
