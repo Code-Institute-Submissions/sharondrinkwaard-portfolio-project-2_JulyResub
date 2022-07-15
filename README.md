@@ -27,7 +27,6 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
     ![Question](./doc/questions-page.png)
     ![Answer feedback](./doc/questions-correct.png)
     ![Control buttons](./doc/control-buttons.png)
-    ![Control Buttons]()
 
 * The game result
     * For every correct answer the user gets one point. All correct answers are being saved and the points earned are showed after the last question.
@@ -39,11 +38,14 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 
 
 ### Features left to implement
+---
 * I would like to expand this quiz to several quizzes.  Each one with facts about another country. One homepage where the user can create a username which can be used to save scores for all quizzes available. Continuing with a dropdown menu where the user can choose the different country quizzes.
 *  I would like to add a database so highscores can be saved from people all over the world.
 * I would like to add an extra JS file where the questions will be located, instead of in the main quiz file like right now. And then add more questions with different kinds of content like images. Unfortunately I ran out of time before the submission date so I will leave this for later.
----
+
+
 ## Testing
+---
 * I tested playing this game in the browsers: Chrome, Microsoft Edge.
 * I confirmed that the quiz won't start without filling in a username.
 * I confirmed that pressing the 'Enter' buttons works and directs to the game after filling in a username.
@@ -58,7 +60,20 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 * I confirm that this design is responsive, looks good and functions on all standard screensizes using the devtools device toolbar. I used two media queries for responsiveness at screen "max-width:850px" and at "max-width:440px". 
 
 
+### Validator Testing
+---
+* HTML
+    * No errors were returned when passing through the  W3C HTML validator
+* CSS
+    * No errors were returned when passing through the CSS Jigsaw validator
+* JavaScript
+    * No errors were returned when passing through the JavaScript JSHint validator.
+
+
 ### Bugs
+---
+#### Unsolved Bugs
+* To my knowledge, there are no unfixed bugs at this moment.
 #### Solved bugs
 * When passing through the validators, I discovered that there were a few pages not correctly linked to the right JavasScript file. On the index.html file I linked two different JavaScript files instead of one.
 * I accidentely used the absolute file path to locate files and images etc. I changed this to the relative file path.
@@ -86,16 +101,6 @@ I disabled the buttons to be clicked again and used the following code for this:
     }
 ```
 
-### Validator Testing
-* HTML
-    * No errors were returned when passing through the  W3C HTML validator
-* CSS
-    * No errors were returned when passing through the CSS Jigsaw validator
-* JavaScript
-    * No errors were returned when passing through the JavaScript JSHint validator. 
-### Unfixed Bugs
-* To my knowledge, there are no unfixed bugs at this moment.
----
 
 ## Deployment
 The site was deployed to GitHub pages. The steps to deploy are as follows:
@@ -108,12 +113,15 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 The link can be found here: https://sharondrinkwaard.github.io/portfolio-project-2/
 
----
-## Credits
 
+## Credits
+---
 ### Content
-* The lettertype was taken from [Google Fonts](https://fonts.google.com/)
-* Instructions on how to use JSON were taken from [W3schools](https://www.w3schools.com/js/js_json_intro.asp) and [Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2567s) on Youtube
+* The lettertype was taken from [Google Fonts](https://fonts.google.com/).
+* Instructions on how to use JSON were taken from [W3schools](https://www.w3schools.com/js/js_json_intro.asp) and [Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2567s) on Youtube.
 * The basic quiz code I used is from [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k). This teacher helped me the most with understanding JavaScript.
 ### Media
-* The background image is taken from [iStock](https://www.istockphoto.com/nl/foto/traditionele-nederlandse-windmolens-en-huizen-in-de-buurt-van-het-kanaal-in-zaanstad-gm937057490-256331390)
+* The background image is taken from [iStock](https://www.istockphoto.com/nl/foto/traditionele-nederlandse-windmolens-en-huizen-in-de-buurt-van-het-kanaal-in-zaanstad-gm937057490-256331390).
+### Other
+* For translating from Dutch to English I used [Google Translate](https://translate.google.com/).
+* Tutor Support and my mentor Daisy.
