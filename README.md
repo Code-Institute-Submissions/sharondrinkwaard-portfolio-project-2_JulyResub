@@ -1,5 +1,5 @@
 # The Dutch quiz
-This quiz game will help you learn some facts about the Netherlands in a fun way. The facts are very random and are shuffled each time you play this game. I designed this quiz mainly for people who recently moved to the Netherlands and help them gain some knowlegde and conversation material. But actually this quiz is fun to play for everyone! <br> Are you ready to play and earn all the 10 points?
+This quiz game will help you learn some facts about the Netherlands in a fun way. The facts are very random and are shuffled each time you play this game. I designed this quiz specificly for people who recently moved to the Netherlands and help them gain some knowlegde and conversation material. But actually this quiz is fun to play for everyone! <br> Are you ready to play and earn all the 10 points?
 
 ![This is a mockup of the quiz](./doc/mockup-quiz.png)
 
@@ -8,30 +8,35 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 ### Existing features
 * Header
     * Featured at the first page of the game. The header welcomes you to the quiz and shows the game name "The Dutch Quiz".
-    * It directs you to create a username.
-    * If the user does not enter a username, the quiz will not start.
-    * All text clearly contrasts with the background as there is a white padding behind it.
+    ![Header](./doc/welcome-message.png)
 
-![Index page](./doc/create-username-page.png)
+* Username
+    * It asks the user to create a username.
+    * If the user does not enter a username, the quiz will not start, but will say: 'This field is required'. On the printscreen this will state 'Vul dit veld in' because the computer language is in Dutch.
+    * All text clearly contrasts with the background as there is a white padding behind it.
+    ![Create username](./doc/create-username.png)
+    ![Username required](./doc/username-required.png)
 
 * The game
     * Starting with asking the user if he/she is ready to take on this quiz, followed by a button that needs to be clicked in order to start the quiz. 
     * Then 10 questions follow which need to be answered by chosing one of the 4 answer buttons.
     * When clicked on an answer, the answers will turn red and green to show you which answer is correct and which are incorrect.
-    * There is time to reread the question and answer and learn from the feedback given until the 'next' button is clicked.
-
-![Start quiz](./doc/start-quiz-page.png)
-
-![Question](./doc/questions-page.png)
-
-![Answer feedback](./doc/questions-correct.png)
+    * There is time to reread the questions and answers and learn from the feedback given until the 'next' button is clicked.
+    * There is also a possibility given to restart the quiz or to go back to the home page. For this the user has to click on the 'Home' or 'Restart' button.
+    ![Start quiz](./doc/start-quiz-page.png)
+    ![Question](./doc/questions-page.png)
+    ![Answer feedback](./doc/questions-correct.png)
+    ![Control buttons](./doc/control-buttons.png)
+    ![Control Buttons]()
 
 * The game result
-    * For every correct answer the user gets one point. All correct answers are being saved and the points earned are showed after clicking the 'Show Me' button.
-    
-![Game Result](./doc/end-quiz.png)
+    * For every correct answer the user gets one point. All correct answers are being saved and the points earned are showed after the last question.
+    ![Game Result](./doc/game-scores.png)
 
-![Scores](./doc/result-page.png)
+* Footer
+    * The footer mentions the copyright and by who this project is created.
+    ![Footer](./doc/footer-copyright.png)
+
 
 ### Features left to implement
 * I would like to expand this quiz to several quizzes.  Each one with facts about another country. One homepage where the user can create a username which can be used to save scores for all quizzes available. Continuing with a dropdown menu where the user can choose the different country quizzes.
@@ -40,14 +45,17 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 ---
 ## Testing
 * I tested playing this game in the browsers: Chrome, Microsoft Edge.
+* I confirmed that the quiz won't start without filling in a username.
+* I confirmed that pressing the 'Enter' buttons works and directs to the game after filling in a username.
+* I conformed that the hover works on all buttons.
+* I confirmed that the links are all directing to the correct page.
+* I confirmed that the correct answer turns to green after clicking and the wrong answer to red.
 * I confirmed that the game results are always correct and the points are counted perfectly.
-* I confirmed that the header, questions and anwers, scores and buttons text is readable and easy to understand.
-* I confirmed that the quiz is fully accesible by running it through lighthouse in devtools.
-
-![Lighthouse report](./doc/lighthouse-report-1.png)
+* I confirmed that the header, footer, questions and anwers, scores and buttons text is readable and easy to understand.
+* I confirmed that the quiz is fully accesible by running it through Lighthouse in devtools.
+![Lighthouse report](./doc/lighthouse-report-js.png)
 
 * I confirm that this design is responsive, looks good and functions on all standard screensizes using the devtools device toolbar. I used two media queries for responsiveness at screen "max-width:850px" and at "max-width:440px". 
-
 
 
 ### Bugs
@@ -91,10 +99,12 @@ I disabled the buttons to be clicked again and used the following code for this:
 
 ## Deployment
 The site was deployed to GitHub pages. The steps to deploy are as follows:
-- In the GitHub repository, navigate to Settings
-- On your left you can find the menu. Scroll down and navigate to Pages
-- From the source section drop-down menu, select Main and click on Save
-- On top of the page a link will show saying that the website is publiced
+- Log in to Github.
+- In the GitHub repository, navigate to 'Settings'
+- On your left you can find the menu. Scroll down and navigate to 'Pages'.
+- From the source section drop-down menu, select 'Main' and click on 'Save'.
+- Now wait a few minutes.
+- On top of the page a link will show saying that the website is publiced.
 
 The link can be found here: https://sharondrinkwaard.github.io/portfolio-project-2/
 

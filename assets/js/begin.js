@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 });
 
-const enterButton = document.getElementById('enter'); // Not in use?
 const form = document.getElementById('form-id');
 
 // Alerts the user when there is no username filled in and prevents the 'Enter' button from functioning.
