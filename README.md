@@ -1,5 +1,5 @@
 # The Dutch quiz
-This quiz game will help you learn some facts about the Netherlands in a fun way. The facts are very random and are shuffled each time you play this game. I designed this quiz specificly for people who recently moved to the Netherlands and help them gain some knowlegde and conversation material. But actually this quiz is fun to play for everyone! <br> Are you ready to play and earn all the 10 points?
+This quiz game will help you learn some facts about the Netherlands in a fun way. The facts are very random and are shuffled each time you play this game. I designed this quiz specificly for people who recently moved to the Netherlands and help them gain some knowlegde and conversation material. The user can actually learn something from simply playing this game. But actually this quiz is fun to play for everyone! <br> Are you ready to play and earn all the 10 points?
 
 ![This is a mockup of the quiz](./doc/mockup-quiz.png)
 
@@ -13,7 +13,7 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 * Username
     * It asks the user to create a username so he can save his score.
     * If the user does not enter a username, the quiz will not start, but will say: 'This field is required'. On the printscreen this will state 'Vul dit veld in' because the computer language is in Dutch.
-    * All text clearly contrasts with the background as there is a white padding behind it.
+    * All text clearly contrasts with the background as there is a white padding behind it which makes it easy to read for the user.
     ![Create username](./doc/create-username.png)
     ![Username required](./doc/username-required.png)
 
@@ -43,7 +43,7 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 ### Features left to implement
 ---
 * I would like to expand this quiz to several quizzes. Each one with facts about another country. One homepage where the user can create a username which can be used to save scores for all quizzes available. Continuing with a dropdown menu where the user can choose the different country quizzes.
-*  I would like to add a database so highscores can be saved from people all over the world.
+*  I would like to add a database so highscores can be saved from people all over the world. This way the users might be challenged more and willing to keep playing.
 * I would like to add an extra JS file where the questions will be located, instead of in the main quiz file like right now. And then add more questions with different kinds of content like images. Unfortunately I ran out of time before the submission date so I will leave this for later.
 
 
