@@ -46,7 +46,7 @@ function startQuiz() {
 }
 
 /**
- * Shows the shuffled questions and shows the "next" button as long as the game is playing.
+ * Shuffles the questions and shows the "next" button as long as the game is playing.
  * When the game is over, the score is being added to the storage object
  */
 function nextQuestion() {
@@ -61,6 +61,9 @@ function nextQuestion() {
     }
 }
 
+/**
+ * This functions displays the question and is implemented in the function above.
+ */
 function showQuestion(question) {
     questionAsked.innerText = question.question;
     question.answers.forEach(answer => {
@@ -75,6 +78,12 @@ function showQuestion(question) {
     });
 }
 
+/**
+ * Hides the 'Next' button at the last question.
+ * And makes sure the answers are displayed on the buttons.
+ * Without this function there will be too many answer buttons which will
+ * display the placeholder text from the html file.
+ */
 function resetState() {
     nextButton.classList.add('hide');
     while (answerChoices.firstChild) {
@@ -83,7 +92,8 @@ function resetState() {
 }
 
 /** 
- * Counts the scores
+ * Let's the user select an answer and counts the scores.
+ * Makes sure an answer cannot be clicked twice.
  */
 function selectAnswer(e) {
 
@@ -101,7 +111,8 @@ function selectAnswer(e) {
 }
 
 /** 
- * Sets the background color of the answers to red or green
+ * Sets the background color of the answers to red or green by adding
+ * the 'wrong' or 'correct' class.
 */
 function setStatusClass(element, correct) {
     clearStatusClass(element);

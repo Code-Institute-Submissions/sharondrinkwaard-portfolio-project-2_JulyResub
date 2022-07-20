@@ -44,7 +44,8 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 ---
 * I would like to expand this quiz to several quizzes. Each one with facts about another country. One homepage where the user can create a username which can be used to save scores for all quizzes available. Continuing with a dropdown menu where the user can choose the different country quizzes.
 *  I would like to add a database so highscores can be saved from people all over the world. This way the users might be challenged more and willing to keep playing.
-* I would like to add an extra JS file where the questions will be located, instead of in the main quiz file like right now. And then add more questions with different kinds of content like images. Unfortunately I ran out of time before the submission date so I will leave this for later.
+* I would like to add an extra JS file where the questions will be located, instead of in the main quiz file like right now. And then add more questions with different kinds of content like images. Unfortunately I ran out of time before the submission date so I will leave this for after completing my study at Code Institute.
+* I might make answering the questions a requirement. Right now it is not required to give an answer and the user can continue to the next question without giving an answer.
 
 
 ## Testing
