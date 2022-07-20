@@ -38,6 +38,7 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 
 * Favicon
     * The game has a favicon so the user can find this game back easliy when a lot of browser tabs are open.
+    ![Favicon](./doc/favicon-screenshot.png)
 
 
 ### Features left to implement
@@ -51,7 +52,7 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 ## Testing
 ---
 * I tested playing this game in the browsers: Chrome, Microsoft Edge.
-* I confirmed that the quiz won't start without filling in a username. I tested this by presing 'Enter' without a username filled in. The game mentions 'This field is required' and won't continue.
+* I confirmed that the quiz won't start without filling in a username. I tested this by pressing 'Enter' without a username filled in. The game mentioned 'This field is required' and won't continue.
 * I confirmed that pressing the 'Enter' button works and directs to the game after filling in a username.
 * I conformed that the hover works on all buttons. I tested this by hovering over every single button several times.
 * I confirmed that the links are all directing to the correct page. I tested this by clicking on them by running the game several times. Each time the links direct to the correct page.
@@ -61,7 +62,9 @@ This quiz game will help you learn some facts about the Netherlands in a fun way
 * I confirmed that the quiz is fully accesible by running it through Lighthouse in devtools.
 ![Lighthouse report](./doc/lighthouse-report-js.png)
 
-* I confirm that this design is responsive, looks good and functions on all standard screensizes using the devtools device toolbar. I used two media queries for responsiveness at screen "max-width:850px" and at "max-width:440px". While testing responsiveness I used devtools in the chrome browser and changed the heigth and width to see how the screens would react. I confirm that this desing is responsive for all screensizes to as small as 243 px wide.
+* I confirm that this design is responsive, looks good and functions on all standard screensizes using the devtools device toolbar. I used two media queries for responsiveness at screen "max-width:850px" and at "max-width:440px". While testing responsiveness I used devtools in the chrome browser and changed the heigth and width to see how the screens would react. I confirm that this design is responsive for all screensizes to as small as 243 px wide.
+
+* I confirm that there are no errors or bugs in the console while using devtools in the browswer. I tested this by running the game several times while keeping devtools open.
 
 
 ### Validator Testing
